@@ -3,7 +3,7 @@ const MAP_NUM_ROWS = 11;
 const MAP_NUM_COLS = 15;
 const TAILLE_SIZE = 32;
 const WINDOW_WIDTH = MAP_NUM_COLS * TAILLE_SIZE;
-const WINDOW_WEIGHT = MAP_NUM_ROWS * TAILLE_SIZE;
+const WINDOW_HEIGHT = MAP_NUM_ROWS * TAILLE_SIZE;
 class Map {
     constructor() {
         this.grid = [
@@ -36,7 +36,7 @@ class Map {
 }
 
 
-
+console.log("hello");
 var grid = new Map();
 
 function setup() {
@@ -50,8 +50,10 @@ function update() {
 
 }
 
-function fraw() {
+function draw() {
     update();
     grid.render();
     //to do : render all objects frame by frame
 }
+
+setup();
