@@ -26,13 +26,13 @@ class Map {
             for (var j = 0; j < MAP_NUM_COLS; j++) {
                 var tailleX = j * TAILLE_SIZE;
                 var tailleY = i * TAILLE_SIZE;
-                var tailleCOLOR = this.grid[i][j] == 1 ? "blue" : "#fff";
+                var tailleCOLOR = this.grid[i][j] == 1 ? "#222" : "#555";
                 stroke("#222");
                 fill(tailleCOLOR);
                 /*if (this.grid[i][j] == 1)
                     fill("blue");
                 else if (this.grid[i][j] == 0) {
-                    fill("white");
+                    fill("#eee");
                 }*/
                 rect(tailleX, tailleY, TAILLE_SIZE, TAILLE_SIZE);
             }
@@ -52,12 +52,18 @@ class Player {
         this.rotationSpeed = 2 * (Math.PI / 180);
 
     }
-    update() {}
     render() {
         fill("black");
-        circle(this.x, this.y, 20);
+        circle(this.x, this.y, 10);
+        //rect(x, y, 100, 100);
+
+        //ellipse(x, y, 20, 20);
         //rect(this.x, this.y, 30, 30);
     }
+    update() {
+        //here something
+    }
+
 
 }
 
@@ -73,15 +79,18 @@ function setup() {
 
 function update() {
     //to do: update all game objects before we render the next frame
-    player.update();
+    //player.update();
 
 }
 
 function draw() {
 
-    player.render();
     update();
+
+    //loop();
+    player.render();
     grid.render();
+
 
 
 
